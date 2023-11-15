@@ -4,10 +4,10 @@ import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporte
 import { baseUrl } from './config.js';
 
 export const options = {
-  // Key configurations for Stress in this section
+  // Key configurations for Soak test in this section
   stages: [
-    { duration: "10m", target: 200 }, // traffic ramp-up from 1 to a higher 200 users over 10 minutes.
-    { duration: "30m", target: 200 }, // stay at higher 200 users for 30 minutes
+    { duration: "5m", target: 100 }, // traffic ramp-up from 1 to 100 users over 5 minutes.
+    { duration: "3h", target: 100 }, // stay at 100 users for 3 hours
     { duration: "5m", target: 0 }, // ramp-down to 0 users
   ],
 };
@@ -19,6 +19,6 @@ export default () => {;;
 
 export function handleSummary(data) {
   return {
-    "reports/stress_report.html": htmlReport(data),
+    "../reports/soak_report.html": htmlReport(data),
   };
 }

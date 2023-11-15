@@ -18,6 +18,6 @@ export default () => {;;
 
 export function handleSummary(data) {
   return {
-    "reports/breakpoint_report.html": htmlReport(data),
+    "../reports/breakpoint_report.html": htmlReport(data),
   };
 }

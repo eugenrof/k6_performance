@@ -18,6 +18,6 @@ export default () => {;;
 
 export function handleSummary(data) {
   return {
-    "reports/spike_report.html": htmlReport(data),
+    "../reports/spike_report.html": htmlReport(data),
   };
 }
